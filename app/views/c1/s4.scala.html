@@ -1,0 +1,3 @@
+@()(implicit flash: Flash)
+<h1>flash scope</h1>
+@flash.get("success").getOrElse("Welcome!")

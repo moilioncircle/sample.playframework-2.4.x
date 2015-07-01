@@ -1,0 +1,19 @@
+@(links: Map[String,Seq[String]])
+
+<h1>Play for Scala developers</h1>
+<ul>
+    <li>playframework 2.4.1</li>
+    <li>scala 2.11.6</li>
+    <li><a href="Playframework html">https://playframework.com/documentation/2.4.x/ScalaHome</a></li>
+    <li><a href="Github Repository">https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide</a></li>
+</ul>
+
+@for((h2,lis)<-links){
+    <h2>@h2</h2>
+    <ul>
+        @for(li<-lis){
+            <li><a href="@li" target="_blank">@li</a></li>
+        }
+    </ul>
+}
+
