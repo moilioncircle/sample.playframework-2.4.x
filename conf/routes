@@ -3,47 +3,65 @@
 # ~~~~
 
 # Home page
-GET        /                             controllers.Application.index
+GET         /                             controllers.Application.index
 
 # 1.1.Actions, Controllers and Results
-GET        /c1/1-1-a1                    controllers.c1.S1ScalaAction.a1
-GET        /c1/1-1-a2                    controllers.c1.S1ScalaAction.a2
-GET        /c1/1-1-a3                    controllers.c1.S1ScalaAction.a3
-GET        /c1/1-1-a4                    controllers.c1.S1ScalaAction.a4
-GET        /c1/1-1-a5/:num               controllers.c1.S1ScalaAction.a5(num:Long)
-GET        /c1/1-1-a6                    controllers.c1.S1ScalaAction.a6
-GET        /c1/1-1-a7/:any               controllers.c1.S1ScalaAction.a7(any)
-GET        /c1/1-1-a8                    controllers.c1.S1ScalaAction.a8
-GET        /c1/1-1-a9/*any               controllers.c1.S1ScalaAction.a9(any)
+GET         /c1/1-1                       controllers.c1.S1ScalaAction.a0
+GET         /c1/1-1-a1                    controllers.c1.S1ScalaAction.a1
+GET         /c1/1-1-a2                    controllers.c1.S1ScalaAction.a2
+GET         /c1/1-1-a3                    controllers.c1.S1ScalaAction.a3
+GET         /c1/1-1-a4                    controllers.c1.S1ScalaAction.a4
+GET         /c1/1-1-a5/:num               controllers.c1.S1ScalaAction.a5(num:Long)
+GET         /c1/1-1-a6                    controllers.c1.S1ScalaAction.a6
+GET         /c1/1-1-a7/:any               controllers.c1.S1ScalaAction.a7(any)
+GET         /c1/1-1-a8                    controllers.c1.S1ScalaAction.a8
+GET         /c1/1-1-a9/*any               controllers.c1.S1ScalaAction.a9(any)
 
 # 1.2.HTTP Routing
-GET        /c1/1-2-a1/:id                controllers.c1.S2ScalaRouting.a1(id:Long)
-GET        /c1/1-2-a2/$id<[0-9]+>        controllers.c1.S2ScalaRouting.a2(id:Long)
-GET        /c1/1-2-a3                    controllers.c1.S2ScalaRouting.a3(page:Int?=1)
-GET        /c1/1-2-a4                    controllers.c1.S2ScalaRouting.a4(version: Option[String])
-GET        /c1/1-2-a5                    controllers.c1.S2ScalaRouting.a5
-GET        /c1/1-2-a6                    controllers.c1.S2ScalaRouting.a6
+GET         /c1/1-2                       controllers.c1.S2ScalaRouting.a0
+GET         /c1/1-2-a1/:id                controllers.c1.S2ScalaRouting.a1(id:Long)
+GET         /c1/1-2-a2/$id<[0-9]+>        controllers.c1.S2ScalaRouting.a2(id:Long)
+GET         /c1/1-2-a3                    controllers.c1.S2ScalaRouting.a3(page:Int?=1)
+GET         /c1/1-2-a4                    controllers.c1.S2ScalaRouting.a4(version: Option[String])
+GET         /c1/1-2-a5                    controllers.c1.S2ScalaRouting.a5
+GET         /c1/1-2-a6                    controllers.c1.S2ScalaRouting.a6
 
 # 1.3.Manipulating results
-GET        /c1/1-3-a1                    controllers.c1.S3ScalaResults.a1
-GET        /c1/1-3-a2                    controllers.c1.S3ScalaResults.a2
-GET        /c1/1-3-a3                    controllers.c1.S3ScalaResults.a3
-GET        /c1/1-3-a4                    controllers.c1.S3ScalaResults.a4
-GET        /c1/1-3-a5                    controllers.c1.S3ScalaResults.a5
-GET        /c1/1-3-a6                    controllers.c1.S3ScalaResults.a6
-GET        /c1/1-3-a7                    controllers.c1.S3ScalaResults.a7
+GET         /c1/1-3                       controllers.c1.S3ScalaResults.a0
+GET         /c1/1-3-a1                    controllers.c1.S3ScalaResults.a1
+GET         /c1/1-3-a2                    controllers.c1.S3ScalaResults.a2
+GET         /c1/1-3-a3                    controllers.c1.S3ScalaResults.a3
+GET         /c1/1-3-a4                    controllers.c1.S3ScalaResults.a4
+GET         /c1/1-3-a5                    controllers.c1.S3ScalaResults.a5
+GET         /c1/1-3-a6                    controllers.c1.S3ScalaResults.a6
+GET         /c1/1-3-a7                    controllers.c1.S3ScalaResults.a7
 
 # 1.4.Session and Flash scopes
-GET        /c1/1-4-a1                    controllers.c1.S4ScalaSessionFlash.a1
-GET        /c1/1-4-a2                    controllers.c1.S4ScalaSessionFlash.a2
-GET        /c1/1-4-a3                    controllers.c1.S4ScalaSessionFlash.a3
-GET        /c1/1-4-a4                    controllers.c1.S4ScalaSessionFlash.a4
-GET        /c1/1-4-a5                    controllers.c1.S4ScalaSessionFlash.a5
-GET        /c1/1-4-a6                    controllers.c1.S4ScalaSessionFlash.a6
-GET        /c1/1-4-a7                    controllers.c1.S4ScalaSessionFlash.a7
-GET        /c1/1-4-a8                    controllers.c1.S4ScalaSessionFlash.a8
+GET         /c1/1-4                       controllers.c1.S4ScalaSessionFlash.a0
+GET         /c1/1-4-a1                    controllers.c1.S4ScalaSessionFlash.a1
+GET         /c1/1-4-a2                    controllers.c1.S4ScalaSessionFlash.a2
+GET         /c1/1-4-a3                    controllers.c1.S4ScalaSessionFlash.a3
+GET         /c1/1-4-a4                    controllers.c1.S4ScalaSessionFlash.a4
+GET         /c1/1-4-a5                    controllers.c1.S4ScalaSessionFlash.a5
+GET         /c1/1-4-a6                    controllers.c1.S4ScalaSessionFlash.a6
+GET         /c1/1-4-a7                    controllers.c1.S4ScalaSessionFlash.a7
+GET         /c1/1-4-a8                    controllers.c1.S4ScalaSessionFlash.a8
+
+
+# 1.5.Body parsers
+GET         /c1/1-5                       controllers.c1.S5ScalaBodyParsers.a0
+POST        /c1/1-5-a1                    controllers.c1.S5ScalaBodyParsers.a1
+POST        /c1/1-5-a2                    controllers.c1.S5ScalaBodyParsers.a2
+POST        /c1/1-5-a3                    controllers.c1.S5ScalaBodyParsers.a3
+POST        /c1/1-5-a4                    controllers.c1.S5ScalaBodyParsers.a4
+POST        /c1/1-5-a5                    controllers.c1.S5ScalaBodyParsers.a5
+POST        /c1/1-5-a6                    controllers.c1.S5ScalaBodyParsers.a6
+POST        /c1/1-5-a7                    controllers.c1.S5ScalaBodyParsers.a7
+
+# 1.6.Actions composition
+GET         /c1/1-6                       controllers.c1.S6ScalaActionsComposition.a0
 
 
 ############################################
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)

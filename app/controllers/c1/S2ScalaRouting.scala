@@ -10,6 +10,21 @@ import play.api.mvc._
 
 class S2ScalaRouting extends Controller {
 
+  val a0 = Action {
+    val list = Seq(
+      "/c1/1-2-a1/1",
+      "/c1/1-2-a2/999",
+      "/c1/1-2-a3",
+      "/c1/1-2-a3?page=2",
+      "/c1/1-2-a4",
+      "/c1/1-2-a4?a=1&version=1.0",
+      "/c1/1-2-a5",
+      "/c1/1-2-a6"
+    )
+
+    Ok(views.html.list("1.2.HTTP Routing", list))
+  }
+
   def a1(id: Long) = Action {
     Ok("show id: " + id)
   }

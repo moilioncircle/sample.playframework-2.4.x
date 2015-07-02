@@ -10,6 +10,27 @@ import play.api.mvc._
 
 class S1ScalaAction extends Controller {
 
+  val a0 = Action {
+    val list = Seq(
+      "/c1/1-1-a1",
+      "/c1/1-1-a2",
+      "/c1/1-1-a3",
+      "/c1/1-1-a4",
+      "/c1/1-1-a5/anyword",
+      "/c1/1-1-a6",
+      "/c1/1-1-a7/ok",
+      "/c1/1-1-a7/notFound",
+      "/c1/1-1-a7/pageNotFound",
+      "/c1/1-1-a7/oops",
+      "/c1/1-1-a7/anyStatus",
+      "/c1/1-1-a7/c1-1-1-a7",
+      "/c1/1-1-a8",
+      "/c1/1-1-a9/t/o/d/o"
+    )
+
+    Ok(views.html.list("1.1. Actions, Controllers and Results", list))
+  }
+
   // Building an Action
   val a1 = Action {
     Ok("Hello world")

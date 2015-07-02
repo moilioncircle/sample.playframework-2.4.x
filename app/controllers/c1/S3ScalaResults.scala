@@ -9,6 +9,20 @@ import play.api.mvc._
 
 class S3ScalaResults extends Controller {
 
+  val a0 = Action {
+    val list = Seq(
+      "/c1/1-3-a1",
+      "/c1/1-3-a2",
+      "/c1/1-3-a3",
+      "/c1/1-3-a4",
+      "/c1/1-3-a5",
+      "/c1/1-3-a6",
+      "/c1/1-3-a7"
+    )
+
+    Ok(views.html.list("1.3.Manipulating results", list))
+  }
+
   val a1 = Action {
     Ok("Hello World!")
   }

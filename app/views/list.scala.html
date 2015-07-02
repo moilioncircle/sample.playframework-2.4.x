@@ -1,0 +1,8 @@
+@(title: String, list: Seq[String])
+
+<h1>@title</h1>
+<ul>
+@for(ln <- list) {
+    <li><a href="@ln" target="_blank">@ln</a></li>
+}
+</ul>

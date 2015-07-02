@@ -9,6 +9,21 @@ import play.api.mvc._
 
 class S4ScalaSessionFlash extends Controller {
 
+  val a0 = Action {
+    val list = Seq(
+      "/c1/1-4-a1",
+      "/c1/1-4-a2",
+      "/c1/1-4-a3",
+      "/c1/1-4-a4",
+      "/c1/1-4-a5",
+      "/c1/1-4-a6",
+      "/c1/1-4-a7",
+      "/c1/1-4-a8"
+    )
+
+    Ok(views.html.list("1.4.Session and Flash scopes", list))
+  }
+
   val a1 = Action {
     Ok("use `F12` to debug network! cookies/PLAY_SESSION").withSession(
       "connected" -> "trydofor@gmail.com")

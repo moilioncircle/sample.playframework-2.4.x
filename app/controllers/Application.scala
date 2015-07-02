@@ -1,64 +1,45 @@
 package controllers
 
-import play.api._
 import play.api.mvc._
+
+case class Link(section: String, local: String, thisGit: String, playGit: String, playDoc: String)
+
+case class Chapter(title: String, sections: Seq[Link])
 
 class Application extends Controller {
 
   def index = Action {
 
-    val links = Map(
-      "1.1. Actions, Controllers and Results" -> Seq(
-        "/c1/1-1-a1",
-        "/c1/1-1-a2",
-        "/c1/1-1-a3",
-        "/c1/1-1-a4",
-        "/c1/1-1-a5/anyword",
-        "/c1/1-1-a6",
-        "/c1/1-1-a7/ok",
-        "/c1/1-1-a7/notFound",
-        "/c1/1-1-a7/pageNotFound",
-        "/c1/1-1-a7/oops",
-        "/c1/1-1-a7/anyStatus",
-        "/c1/1-1-a7/c1-1-1-a7",
-        "/c1/1-1-a8",
-        "/c1/1-1-a9/t/o/d/o"
-      ),
-
-      "1.2.HTTP Routing" -> Seq(
-        "/c1/1-2-a1/1",
-        "/c1/1-2-a2/999",
-        "/c1/1-2-a3",
-        "/c1/1-2-a3?page=2",
-        "/c1/1-2-a4",
-        "/c1/1-2-a4?a=1&version=1.0",
-        "/c1/1-2-a5",
-        "/c1/1-2-a6"
-      ),
-
-      "1.3.Manipulating results" -> Seq(
-        "/c1/1-3-a1",
-        "/c1/1-3-a2",
-        "/c1/1-3-a3",
-        "/c1/1-3-a4",
-        "/c1/1-3-a5",
-        "/c1/1-3-a6",
-        "/c1/1-3-a7"
-      ),
-
-      "1.4.Session and Flash scopes" -> Seq(
-        "/c1/1-4-a1",
-        "/c1/1-4-a2",
-        "/c1/1-4-a3",
-        "/c1/1-4-a4",
-        "/c1/1-4-a5",
-        "/c1/1-4-a6",
-        "/c1/1-4-a7",
-        "/c1/1-4-a8"
-      )
-
+    val table = Seq(
+      "Main concepts" -> Seq(
+        Chapter("1.HTTP programming", Seq(
+          Link("1.1.Actions, Controllers and Results", "/c1/1-1",
+            "app/controllers/c1/S1ScalaAction.scala",
+            "main/http/code/ScalaActions.scala",
+            "ScalaActions"),
+          Link("1.2.HTTP Routing", "/c1/1-2",
+            "app/controllers/c1/S2ScalaRouting.scala",
+            "main/http/code/ScalaRouting.scala",
+            "ScalaRouting"),
+          Link("1.3.Manipulating results", "/c1/1-3",
+            "app/controllers/c1/S3ScalaResults.scala",
+            "main/http/code/ScalaResults.scala",
+            "ScalaResults"),
+          Link("1.4.Session and Flash scopes", "/c1/1-4",
+            "app/controllers/c1/S4ScalaSessionFlash.scala",
+            "main/http/code/ScalaSessionFlash.scala",
+            "S4ScalaSessionFlash"),
+          Link("1.5.Body parsers", "/c1/1-5",
+            "app/controllers/c1/S5ScalaBodyParsers.scala",
+            "main/http/code/ScalaBodyParsers.scala",
+            "ScalaBodyParsers"),
+          Link("1.6.Actions composition", "/c1/1-6",
+            "app/controllers/c1/S6ScalaActionsComposition.scala",
+            "main/http/code/ScalaActionsComposition.scala",
+            "ScalaActionsComposition")
+        )
+        ))
     )
-    Ok(views.html.index(links))
+    Ok(views.html.index(table))
   }
-
 }

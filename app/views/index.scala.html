@@ -1,19 +1,35 @@
-@(links: Map[String,Seq[String]])
+@import controllers.{Chapter,Link}
+@(table: Seq[Tuple2[String, Seq[Chapter]]])
 
 <h1>Play for Scala developers</h1>
 <ul>
     <li>playframework 2.4.1</li>
     <li>scala 2.11.6</li>
-    <li><a href="Playframework html">https://playframework.com/documentation/2.4.x/ScalaHome</a></li>
-    <li><a href="Github Repository">https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide</a></li>
+    <li><a href="https://playframework.com/documentation/2.4.x/ScalaHome" target="_blank">Playframework html</a></li>
+    <li><a href="https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide" target="_blank">Github Repository</a></li>
 </ul>
 
-@for((h2,lis)<-links){
-    <h2>@h2</h2>
-    <ul>
-        @for(li<-lis){
-            <li><a href="@li" target="_blank">@li</a></li>
-        }
-    </ul>
+<ul>
+    <li><a href="http://127.0.0.1:9000/" target="_blank">local</a> - http://127.0.0.1:9000/*</li>
+    <li><a href="https://github.com/moilioncircle/playframework-2.4.x-scala" target="_blank">this-code</a> - https://github.com/moilioncircle/playframework-2.4.x-scala/*.scala </li>
+    <li><a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/" target="_blank">play-code</a> - https://github.com/playframework/playframework/*.scala </li>
+    <li><a href="https://playframework.com/documentation/2.4.x/ScalaHome" target="_blank">play-doc</a> - https://playframework.com/documentation/2.4.x/ScalaHome/* </li>
+</ul>
+
+@for((part, chapters) <- table) {
+    <h2>@part</h2>
+    @for(ch <- chapters) {
+        <h3>@ch.title</h3>
+        <ul>
+        @for(lnk <- ch.sections) {
+            <li>
+                <a href="@lnk.local" target="_blank">local</a> |
+                <a href="https://github.com/moilioncircle/playframework-2.4.x-scala/blob/master/@lnk.thisGit" target="_blank">this-code</a> |
+                <a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/@lnk.playGit" target="_blank">play-code</a> |
+                <a href="https://playframework.com/documentation/2.4.x/@lnk.playDoc" target="_blank">play-doc</a> |
+                <b>@lnk.section</b>
+            </li>
+        </ul>
+    }
 }
 
