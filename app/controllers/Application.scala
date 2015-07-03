@@ -40,7 +40,11 @@ class Application extends Controller {
           Link("1.7.Content negotiation", "/c1/1-7",
             "app/controllers/c1/S7ScalaContentNegotiation.scala",
             "main/http/code/ScalaContentNegotiation.scala",
-            "ScalaContentNegotiation")
+            "ScalaContentNegotiation"),
+          Link("1.8.Content negotiation", "/c1/1-8",
+            "app/controllers/c1/S8ScalaErrorHandling.scala",
+            "main/http/code/ScalaErrorHandling.scala",
+            "ScalaErrorHandling")
         )
         ))
     )

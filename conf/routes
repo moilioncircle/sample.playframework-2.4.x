@@ -69,13 +69,15 @@ POST        /c1/1-6-a6                    controllers.c1.S6ScalaActionsCompositi
 POST        /c1/1-6-a7                    controllers.c1.S6ScalaActionsComposition.a7
 GET         /c1/1-6-a8                    controllers.c1.S6ScalaActionsComposition.a8(id,tag)
 
-
 # 1.7.Content negotiation
 GET         /c1/1-7                       controllers.c1.S7ScalaContentNegotiation.a0
 POST        /c1/1-7-a1                    controllers.c1.S7ScalaContentNegotiation.a1
 POST        /c1/1-7-a2                    controllers.c1.S7ScalaContentNegotiation.a2
 
-
+# 1.8.Handling errors
+GET         /c1/1-8                       controllers.c1.S8ScalaErrorHandling.a0
+GET         /c1/1-8-a1                    controllers.c1.S8ScalaErrorHandling.a1
+GET         /c1/1-8-a2                    controllers.c1.S8ScalaErrorHandling.a2
 
 ############################################
 # Map static resources from the /public folder to the /assets URL path
