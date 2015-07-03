@@ -1,0 +1,38 @@
+<script src="@routes.Assets.versioned("javascripts/jquery-2.1.4.min.js")" type="text/javascript"></script>
+<h1>1.7.Content negotiation</h1>
+<script type="text/javascript">
+function submit(type,url){
+    $.ajax({
+        url: url,
+        beforeSend: function(xhr) {
+        xhr.setRequestHeader('Accept', type+";q=0.9,image/webp,*/*;q=0.8");
+        },
+        type: "POST",
+        data: {"user" : "min", "pass" : "he"},
+        error: function(jqXHR, textStatus, errorThrown) {
+            if (textStatus == "error") {
+                alert(textStatus + " : " +errorThrown);
+            } else {
+                alert(textStatus);
+            }
+        },
+        success: function(data, textStatus, jqXHR) {
+            var msg = ""
+            msg += "\nreq-type: " + type;
+            msg += "\nres-type: " + toString.apply(data);
+            msg += "\nStatus: " + textStatus;
+            msg += "\nHeader:\n" + jqXHR.getAllResponseHeaders();
+            msg += "\nData:\n" + data;
+            alert(msg)
+        }
+    });
+}
+
+
+</script>
+
+<p><input type="button" value="/c1/1-7-a1 text/html" onclick='submit("text/html","/c1/1-7-a1")'></p>
+
+<p><input type="button" value="/c1/1-7-a1 application/json" onclick='submit("application/json","/c1/1-7-a1")'></p>
+
+<p><input type="button" value="/c1/1-7-a2 audio/mp3" onclick='submit("audio/mp3","/c1/1-7-a2")'></p>

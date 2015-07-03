@@ -60,6 +60,21 @@ POST        /c1/1-5-a7                    controllers.c1.S5ScalaBodyParsers.a7
 
 # 1.6.Actions composition
 GET         /c1/1-6                       controllers.c1.S6ScalaActionsComposition.a0
+GET         /c1/1-6-a1                    controllers.c1.S6ScalaActionsComposition.a1
+POST        /c1/1-6-a2                    controllers.c1.S6ScalaActionsComposition.a2
+POST        /c1/1-6-a3                    controllers.c1.S6ScalaActionsComposition.a3
+POST        /c1/1-6-a4                    controllers.c1.S6ScalaActionsComposition.a4
+POST        /c1/1-6-a5                    controllers.c1.S6ScalaActionsComposition.a5
+POST        /c1/1-6-a6                    controllers.c1.S6ScalaActionsComposition.a6
+POST        /c1/1-6-a7                    controllers.c1.S6ScalaActionsComposition.a7
+GET         /c1/1-6-a8                    controllers.c1.S6ScalaActionsComposition.a8(id,tag)
+
+
+# 1.7.Content negotiation
+GET         /c1/1-7                       controllers.c1.S7ScalaContentNegotiation.a0
+POST        /c1/1-7-a1                    controllers.c1.S7ScalaContentNegotiation.a1
+POST        /c1/1-7-a2                    controllers.c1.S7ScalaContentNegotiation.a2
+
 
 
 ############################################

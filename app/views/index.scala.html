@@ -24,11 +24,14 @@
         @for(lnk <- ch.sections) {
             <li>
                 <a href="@lnk.local" target="_blank">local</a> |
-                <a href="https://github.com/moilioncircle/playframework-2.4.x-scala/blob/master/@lnk.thisGit" target="_blank">this-code</a> |
-                <a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/@lnk.playGit" target="_blank">play-code</a> |
+                <a href="https://github.com/moilioncircle/playframework-2.4.x-scala/blob/master/@lnk.thisGit" target="_blank">this-code</a>
+                |
+                <a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/@lnk.playGit" target="_blank">play-code</a>
+                |
                 <a href="https://playframework.com/documentation/2.4.x/@lnk.playDoc" target="_blank">play-doc</a> |
                 <b>@lnk.section</b>
             </li>
+        }
         </ul>
     }
 }

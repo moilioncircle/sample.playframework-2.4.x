@@ -36,7 +36,11 @@ class Application extends Controller {
           Link("1.6.Actions composition", "/c1/1-6",
             "app/controllers/c1/S6ScalaActionsComposition.scala",
             "main/http/code/ScalaActionsComposition.scala",
-            "ScalaActionsComposition")
+            "ScalaActionsComposition"),
+          Link("1.7.Content negotiation", "/c1/1-7",
+            "app/controllers/c1/S7ScalaContentNegotiation.scala",
+            "main/http/code/ScalaContentNegotiation.scala",
+            "ScalaContentNegotiation")
         )
         ))
     )

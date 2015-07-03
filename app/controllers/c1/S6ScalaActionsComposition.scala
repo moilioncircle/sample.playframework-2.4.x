@@ -8,13 +8,13 @@ import scala.concurrent.Future
 
 /**
  * Created by trydofor on 7/2/15.
- * @see https://playframework.com/documentation/2.4.x/ScalaBodyParsers
+ * @see https://playframework.com/documentation/2.4.x/ScalaActionsComposition
  */
 
 class S6ScalaActionsComposition extends Controller {
 
   def a0 = Action {
-    Ok(views.html.c1.s5()).withSession("username" -> "trydofor")
+    Ok(views.html.c1.s6()).withSession("username" -> "trydofor")
   }
 
   object LoggingAction extends ActionBuilder[Request] {
@@ -25,11 +25,11 @@ class S6ScalaActionsComposition extends Controller {
   }
 
   def a1 = LoggingAction {
-    Ok("Hello World")
+    Ok("a1 Hello World")
   }
 
   def a2 = LoggingAction(parse.text) { request =>
-    Ok("Got a body " + request.body.length + " bytes long")
+    Ok("a2 Got a body " + request.body.length + " bytes long")
   }
 
   case class Logging[A](action: Action[A]) extends Action[A] {
@@ -42,9 +42,15 @@ class S6ScalaActionsComposition extends Controller {
     lazy val parser = action.parser
   }
 
-  def a3[A](action: Action[A]) = Action.async(action.parser) { request =>
+  def logging[A](action: Action[A]) = Action.async(action.parser) { request =>
     Logger.info("Calling action")
     action(request)
+  }
+
+  def a3 = logging {
+    Action { request =>
+      Ok("a3 Got a body " + request.body + " bytes long")
+    }
   }
 
   object LoggingAction2 extends ActionBuilder[Request] {
@@ -56,12 +62,12 @@ class S6ScalaActionsComposition extends Controller {
   }
 
   def a4 = LoggingAction2 {
-    Ok("Hello World")
+    Ok("a4 Hello World")
   }
 
   def a5 = Logging {
     Action {
-      Ok("Hello World")
+      Ok("a5 Hello World")
     }
   }
 
@@ -89,6 +95,8 @@ class S6ScalaActionsComposition extends Controller {
     action(request).map(_.withHeaders("X-UA-Compatible" -> "Chrome=1"))
   }
 
+  def a6 = addUaHeader(Action(Ok("f5 and debug to check X-UA-Compatible -> Chrome=1")))
+
   class UserRequest[A](val username: Option[String], request: Request[A]) extends WrappedRequest[A](request)
 
   object UserAction extends
@@ -98,11 +106,16 @@ class S6ScalaActionsComposition extends Controller {
     }
   }
 
-  // mock class
+  def a7 = UserAction { request =>
+    Ok("The current user is " + request.username.getOrElse("anonymous"))
+  }
+
   case class Item(id: String) {
     def addTag(tag: String) = ()
+
     def accessibleByUser(user: Option[String]) = user.isDefined
   }
+
   object ItemDao {
     def findById(id: String) = Some(Item(id))
   }
@@ -110,7 +123,6 @@ class S6ScalaActionsComposition extends Controller {
   class ItemRequest[A](val item: Item, request: UserRequest[A]) extends WrappedRequest[A](request) {
     def username = request.username
   }
-  // end mock
 
 
   def ItemAction(itemId: String) = new ActionRefiner[UserRequest, ItemRequest] {
@@ -130,9 +142,10 @@ class S6ScalaActionsComposition extends Controller {
     }
   }
 
-  def tagItem(itemId: String, tag: String) =
+  def a8(itemId: String, tag: String) = {
     (UserAction andThen ItemAction(itemId) andThen PermissionCheckAction) { request =>
       request.item.addTag(tag)
       Ok("User " + request.username + " tagged " + request.item.id)
     }
+  }
 }

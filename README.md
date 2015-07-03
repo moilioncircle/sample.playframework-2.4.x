@@ -1,11 +1,16 @@
-# Code Sample of Playframework/2.4.x + Scala/2.11.x
+# Code Sample of Playframework
 
 Code sample of `Play for Scala developers`
+  
+ * playframework 2.4.1
+ * scala 2.11.6
+ * sbt 0.13.8
+ * java 1.8.0_45
 
 ## Play for Scala developers
 
- * [Playframework html](https://playframework.com/documentation/2.4.x/ScalaHome)
- * [Github Repository](https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide)
+ * [scala guide in html](https://playframework.com/documentation/2.4.x/ScalaHome)
+ * [scala guide at github repository](https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide)
  
 ## How to use this guide
 
@@ -15,8 +20,7 @@ https://github.com/moilioncircle/playframework-2.4.x-scala
 2. `cd playframework-2.4.x-scala`
 
 3. `./activator run` and visit  
-http://localhost:9000
-
+http://127.0.0.1:9000
 
 ## How to read Play's guide
 
