@@ -79,6 +79,11 @@ GET         /c1/1-8                       controllers.c1.S8ScalaErrorHandling.a0
 GET         /c1/1-8-a1                    controllers.c1.S8ScalaErrorHandling.a1
 GET         /c1/1-8-a2                    controllers.c1.S8ScalaErrorHandling.a2
 
+# 2.1.Asynchronous results
+GET         /c2/2-1                       controllers.c2.S1ScalaAsync.a0
+GET         /c2/2-1-a1                    controllers.c2.S1ScalaAsync.a1(t:Long)
+GET         /c2/2-1-a2                    controllers.c2.S1ScalaAsync.a2(t:Long)
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)

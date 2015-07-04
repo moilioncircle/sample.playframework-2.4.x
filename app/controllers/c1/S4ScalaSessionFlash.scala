@@ -5,6 +5,7 @@ import play.api.mvc._
 /**
  * Created by trydofor on 7/1/15.
  * @see https://playframework.com/documentation/2.4.x/ScalaSessionFlash
+ * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/http/code/ScalaSessionFlash.scala
  */
 
 class S4ScalaSessionFlash extends Controller {

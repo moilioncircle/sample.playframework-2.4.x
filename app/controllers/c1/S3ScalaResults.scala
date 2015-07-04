@@ -5,6 +5,7 @@ import play.api.mvc._
 /**
  * Created by trydofor on 7/1/15.
  * @see https://playframework.com/documentation/2.4.x/ScalaResults
+ * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/http/code/ScalaResults.scala
  */
 
 class S3ScalaResults extends Controller {

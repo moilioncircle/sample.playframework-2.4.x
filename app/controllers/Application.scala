@@ -44,7 +44,11 @@ class Application extends Controller {
           Link("1.8.Content negotiation", "/c1/1-8",
             "app/controllers/c1/S8ScalaErrorHandling.scala",
             "main/http/code/ScalaErrorHandling.scala",
-            "ScalaErrorHandling")
+            "ScalaErrorHandling"),
+          Link("2.1.Asynchronous results", "/c2/2-1",
+            "app/controllers/c2/S1ScalaAsync.scala",
+            "main/async/code/ScalaAsync.scala",
+            "ScalaAsync")
         )
         ))
     )

@@ -9,6 +9,7 @@ import scala.concurrent.Future
 /**
  * Created by trydofor on 7/2/15.
  * @see https://playframework.com/documentation/2.4.x/ScalaContentNegotiation
+ * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/http/code/ScalaContentNegotiation.scala
  */
 
 class S7ScalaContentNegotiation extends Controller {
