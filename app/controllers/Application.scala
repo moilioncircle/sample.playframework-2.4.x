@@ -48,7 +48,11 @@ class Application extends Controller {
           Link("2.1.Asynchronous results", "/c2/2-1",
             "app/controllers/c2/S1ScalaAsync.scala",
             "main/async/code/ScalaAsync.scala",
-            "ScalaAsync")
+            "ScalaAsync"),
+          Link("2.2.Streaming HTTP responses", "/c2/2-2",
+            "app/controllers/c2/S2ScalaStream.scala",
+            "main/async/code/",
+            "ScalaStream")
         )
         ))
     )
