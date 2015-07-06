@@ -1,0 +1,15 @@
+@(url: String)
+
+<script type="text/javascript">
+function showmsg(msg){
+//    var obj = document.getElementById("output");
+//    var html = obj.innerHTML;
+//    obj.innerHTML = html + msg+"<br/>"
+document.getElementById("output").innerHTML +=msg+"<br/>";
+}
+function clock(time){
+    document.getElementById("output").innerHTML=time;
+}
+</script>
+<div id="output"></div>
+<iframe src="@url" style="display : none"></iframe>
