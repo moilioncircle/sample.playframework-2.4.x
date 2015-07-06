@@ -54,9 +54,13 @@ class Application extends Controller {
             "main/async/code/",
             "ScalaStream"),
           Link("2.3.Comet sockets", "/c2/2-3",
-            "app/controllers/c2/S2ScalaComet.scala",
+            "app/controllers/c2/S3ScalaComet.scala",
             "main/async/code/ScalaComet.scala",
-            "ScalaComet")
+            "ScalaComet"),
+          Link("2.4.WebSockets", "/c2/2-4",
+            "app/controllers/c2/S4ScalaWebSockets.scala",
+            "main/async/code/ScalaWebSockets.scala",
+            "ScalaWebSockets")
         )
         ))
     )

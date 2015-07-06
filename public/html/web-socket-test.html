@@ -1,0 +1,70 @@
+<html ng-app="app">
+<head>
+    <script type="text/javascript">
+
+        var myWebSocket;
+
+        function log(msg){
+            var ot = document.getElementById("output");
+            ot.value = ot.value+"\n"+msg;
+            console.log(msg)
+        }
+
+        function connectToWS() {
+            var endpoint = document.getElementById("endpoint").value;
+            if (myWebSocket !== undefined) {
+                myWebSocket.close()
+            }
+
+            myWebSocket = new WebSocket(endpoint);
+
+            myWebSocket.onmessage = function (event) {
+                var leng;
+                if (event.data.size === undefined) {
+                    leng = event.data.length
+                } else {
+                    leng = event.data.size
+                }
+                log("onmessage. size: " + leng + ", content: " + event.data);
+            }
+
+            myWebSocket.onopen = function (evt) {
+                log("onopen.");
+            };
+
+            myWebSocket.onclose = function (evt) {
+                log("onclose.");
+            };
+
+            myWebSocket.onerror = function (evt) {
+                log("Error!");
+            };
+        }
+
+        function sendMsg() {
+            var message = document.getElementById("myMessage").value;
+            myWebSocket.send(message);
+        }
+
+        function closeConn() {
+            myWebSocket.close();
+        }
+
+    </script>
+</head>
+<body>
+
+connection to: <input type="text" id="endpoint" value="ws://127.0.0.1:9000/"><br>
+
+<input type="button" onclick="connectToWS()" value="connect to WebSocket endpoint"/><br><br>
+
+message: <input type="text" id="myMessage" value="hi there!"><br>
+
+<input type="button" onclick="sendMsg()" value="Send message"/>
+
+<input type="button" onclick="closeConn()" value="Close connection"/><br>
+
+output: <br>
+<textarea id="output" rows="20" cols="75" > </textarea>
+</body>
+</html>

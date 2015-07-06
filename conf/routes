@@ -102,6 +102,24 @@ GET         /c2/2-3-a2                    controllers.c2.S3ScalaComet.a2(f:Boole
 GET         /c2/2-3-a3                    controllers.c2.S3ScalaComet.a3(f:Boolean?=false)
 GET         /c2/2-3-a4                    controllers.c2.S3ScalaComet.a4(f:Boolean?=false)
 
+# 2.4.WebSockets
+GET         /c2/2-4                       controllers.c2.S4ScalaWebSockets.a0
+GET         /c2/2-4-a1                    controllers.c2.S4ScalaWebSockets.a1
+GET         /c2/2-4-a1ws                  controllers.c2.S4ScalaWebSockets.a1ws
+GET         /c2/2-4-a2                    controllers.c2.S4ScalaWebSockets.a2(f:Boolean?=false)
+GET         /c2/2-4-a2ws                  controllers.c2.S4ScalaWebSockets.a2ws
+GET         /c2/2-4-a3                    controllers.c2.S4ScalaWebSockets.a3
+GET         /c2/2-4-a3ws                  controllers.c2.S4ScalaWebSockets.a3ws
+GET         /c2/2-4-a4                    controllers.c2.S4ScalaWebSockets.a4
+GET         /c2/2-4-a4ws                  controllers.c2.S4ScalaWebSockets.a4ws
+GET         /c2/2-4-a5                    controllers.c2.S4ScalaWebSockets.a5
+GET         /c2/2-4-a5ws                  controllers.c2.S4ScalaWebSockets.a5ws
+GET         /c2/2-4-a6                    controllers.c2.S4ScalaWebSockets.a6
+GET         /c2/2-4-a6ws                  controllers.c2.S4ScalaWebSockets.a6ws
+GET         /c2/2-4-a7                    controllers.c2.S4ScalaWebSockets.a7
+GET         /c2/2-4-a7ws                  controllers.c2.S4ScalaWebSockets.a7ws
+GET         /c2/2-4-ax                    controllers.c2.S4ScalaWebSockets.ax
+GET         /c2/2-4-ws                    controllers.Assets.at(path="/public/html/", file="web-socket-test.html")
 
 ############################################
 # Map static resources from the /public folder to the /assets URL path
