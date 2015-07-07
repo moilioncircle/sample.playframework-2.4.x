@@ -8,6 +8,7 @@ import play.api.mvc._
  * Created by trydofor on 7/2/15.
  * @see https://playframework.com/documentation/2.4.x/ScalaBodyParsers
  * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/http/code/ScalaBodyParsers.scala
+ * @see /conf/application.conf play.http.parser.maxMemoryBuffer
  */
 
 class S5ScalaBodyParsers extends Controller {

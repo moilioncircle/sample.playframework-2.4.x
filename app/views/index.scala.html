@@ -2,18 +2,27 @@
 @(table: Seq[Tuple2[String, Seq[Chapter]]])
 
 <h1>Play for Scala developers</h1>
+
+<p>Some code in ScalaGuide can not work very well, let's do it !</p>
+
+<h2>References</h2>
 <ul>
     <li>playframework 2.4.1</li>
     <li>scala 2.11.6</li>
     <li><a href="https://playframework.com/documentation/2.4.x/ScalaHome" target="_blank">Playframework html</a></li>
-    <li><a href="https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide" target="_blank">Github Repository</a></li>
+    <li><a href="https://github.com/playframework/playframework/tree/2.4.x/documentation/manual/working/scalaGuide" target="_blank">ScalaGuide @@Github</a></li>
+    <li><a href="https://github.com/Hawstein/play-for-scala-developers" target="_blank">中文版指南</a></li>
+
 </ul>
 
+<h2>Conventions</h2>
 <ul>
-    <li><a href="http://127.0.0.1:9000/" target="_blank">local</a> - http://127.0.0.1:9000/*</li>
-    <li><a href="https://github.com/moilioncircle/playframework-2.4.x-scala" target="_blank">this-code</a> - https://github.com/moilioncircle/playframework-2.4.x-scala/*.scala </li>
-    <li><a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/" target="_blank">play-code</a> - https://github.com/playframework/playframework/*.scala </li>
-    <li><a href="https://playframework.com/documentation/2.4.x/ScalaHome" target="_blank">play-doc</a> - https://playframework.com/documentation/2.4.x/ScalaHome/* </li>
+    <li><a href="http://127.0.0.1:9000/" target="_blank">R</a> - runnable page at http://127.0.0.1:9000/*</li>
+    <li><a href="https://github.com/moilioncircle/playframework-2.4.x-scala" target="_blank">C</a> - This Code at https://github.com/moilioncircle/playframework-2.4.x-scala/*.scala </li>
+    <li><a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/" target="_blank">T</a> - Play TestCase at https://github.com/.../manual/working/scalaGuide/*.scala </li>
+    <li><a href="https://playframework.com/documentation/2.4.x/ScalaHome" target="_blank">D</a> - Play Doc at https://playframework.com/documentation/2.4.x/ScalaHome/* </li>
+    <li>X - Link Missing / Not Found </li>
+
 </ul>
 
 @for((part, chapters) <- table) {
@@ -23,13 +32,20 @@
         <ul>
         @for(lnk <- ch.sections) {
             <li>
-                <a href="@lnk.local" target="_blank">local</a> |
-                <a href="https://github.com/moilioncircle/playframework-2.4.x-scala/blob/master/@lnk.thisGit" target="_blank">this-code</a>
-                |
-                <a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/@lnk.playGit" target="_blank">play-code</a>
-                |
-                <a href="https://playframework.com/documentation/2.4.x/@lnk.playDoc" target="_blank">play-doc</a> |
-                <b>@lnk.section</b>
+                <a href="@lnk.local" target="_blank">R</a>
+                @if(lnk.thisGit == "") {X} else {
+                    <a href="https://github.com/moilioncircle/playframework-2.4.x-scala/blob/master/@lnk.thisGit" target="_blank">C</a>
+                }
+                @if(lnk.playGit == "") {X} else {
+                    @if(lnk.playGit.startsWith("http")){
+                        <a href="@lnk.playGit" target="_blank">T</a>
+                    }else{
+                        <a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/@lnk.playGit" target="_blank">T</a>
+                    }}
+                @if(lnk.playDoc == "") {X} else {
+                    <a href="https://playframework.com/documentation/2.4.x/@lnk.playDoc" target="_blank">D</a>
+                }
+                | <b>@lnk.section</b>
             </li>
         }
         </ul>

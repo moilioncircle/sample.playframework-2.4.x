@@ -1,0 +1,56 @@
+@import controllers.c3._
+@(customer: Customer, orders: List[Order])(implicit html:String)
+
+<h1>3.1.Scala templates syntax</h1>
+
+<p>Welcome @customer.name!</p>
+
+<p>Hello @(customer.firstName + customer.lastName)!</p>
+
+<p>Hello @{val name = customer.firstName + customer.lastName; name}!</p>
+
+<p>My email is bob@@example.com</p>
+
+@if(orders.isEmpty) {
+    <p>Nothing to display</p>
+} else {
+    <ul>
+    @for(order <- orders) {
+        <li>@order.title ($@order.price)</li>
+    }
+    </ul>
+}
+
+@display(order: Order) = {
+    @order.title ($@order.price)
+}
+
+<ul>
+@for(order <- orders) {
+    <li>@display(order)</li>
+}
+</ul>
+
+
+@title(text: String) = @{
+    text.split(' ').map(_.capitalize).mkString(" ")
+}
+
+<h1>@title("hello world")</h1>
+
+@implicitFieldConstructor = @{ "MyFieldConstructor()" }
+
+@defining(customer.firstName + " " + customer.lastName) { fullName =>
+    <div>Hello @fullName</div>
+}
+
+@*********************
+* This is a comment *
+*********************@
+
+<p>
+@Html(html)
+</p>
+<p>
+@html
+</p>

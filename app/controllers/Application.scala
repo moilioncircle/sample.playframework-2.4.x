@@ -44,14 +44,16 @@ class Application extends Controller {
           Link("1.8.Content negotiation", "/c1/1-8",
             "app/controllers/c1/S8ScalaErrorHandling.scala",
             "main/http/code/ScalaErrorHandling.scala",
-            "ScalaErrorHandling"),
+            "ScalaErrorHandling")
+        )),
+        Chapter("2.Asynchronous HTTP programming", Seq(
           Link("2.1.Asynchronous results", "/c2/2-1",
             "app/controllers/c2/S1ScalaAsync.scala",
             "main/async/code/ScalaAsync.scala",
             "ScalaAsync"),
           Link("2.2.Streaming HTTP responses", "/c2/2-2",
             "app/controllers/c2/S2ScalaStream.scala",
-            "main/async/code/",
+            "",
             "ScalaStream"),
           Link("2.3.Comet sockets", "/c2/2-3",
             "app/controllers/c2/S3ScalaComet.scala",
@@ -61,9 +63,24 @@ class Application extends Controller {
             "app/controllers/c2/S4ScalaWebSockets.scala",
             "main/async/code/ScalaWebSockets.scala",
             "ScalaWebSockets")
-        )
+        )),
+        Chapter("3.The template engine (out of date)", Seq(
+          Link("3.1.WebSockets", "/c3/3-1",
+            "app/controllers/c3/S1ScalaTemplates.scala",
+            "https://github.com/playframework/twirl/blob/1.0.x/docs/manual/working/scalaGuide/main/templates/code/ScalaTemplates.scala",
+            "ScalaTemplates"),
+          Link("3.2.Common use cases", "/c3/3-2",
+            "app/controllers/c3/S2ScalaTemplateUseCases.scala",
+            "https://github.com/playframework/twirl/tree/1.0.x/docs/manual/working/scalaGuide/main/templates/code/scalaguide/templates",
+            "ScalaTemplateUseCases"),
+          Link("3.3.Custom format", "/c3/3-3",
+            "app/controllers/c3/S3ScalaCustomTemplateFormat.scala",
+            "https://github.com/playframework/twirl/blob/1.0.x/compiler/src/test/scala/play/twirl/compiler/test/TemplateUtilsSpec.scala",
+            "ScalaCustomTemplateFormat")
         ))
+      )
     )
+
     Ok(views.html.index(table))
   }
 }

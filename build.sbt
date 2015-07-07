@@ -2,7 +2,10 @@ name := """playframework-2.4.x-scala"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+//lazy val root = (project in file(".")).enablePlugins(PlayScala)
+
+//@see @see 3.3.Custom format
+lazy val root = (project in file(".")).enablePlugins(PlayScala,SbtTwirl)
 
 scalaVersion := "2.11.6"
 
@@ -21,3 +24,8 @@ routesGenerator := InjectedRoutesGenerator
 
 
 // fork in run := true
+
+// @see 3.3.Custom format
+import play.twirl.sbt.Import._
+
+TwirlKeys.templateFormats += ("shi" -> "controllers.c3.ShiFormat")

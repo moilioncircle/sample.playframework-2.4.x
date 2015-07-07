@@ -9,6 +9,7 @@ import scala.concurrent._
  * Created by trydofor on 7/3/15.
  * @see https://playframework.com/documentation/2.4.x/ScalaErrorHandling
  * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/http/code/ScalaErrorHandling.scala
+ * @see /conf/application.conf play.http.errorHandler
  */
 
 class S8ScalaErrorHandling extends HttpErrorHandler {

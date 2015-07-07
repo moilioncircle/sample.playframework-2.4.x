@@ -56,16 +56,17 @@
     </head>
     <body>
 
-        connection to: <input type="text" width="450px" id="endpoint" value="ws://127.0.0.1:9000@url"><br>
-
-        <input type="button" onclick="connectToWS()" value="connect to WebSocket endpoint"/><br><br>
-
-        message: <input type="text" id="myMessage" width="450px"  value="@msg"><br>
+        WebSocket :<br/>
+        <input type="text" size="80" id="endpoint" value="ws://127.0.0.1:9000@url"> <br/>
+        <input type="button" onclick="connectToWS()" value="Connect to WebSocket"/>
+        <input type="button" onclick="closeConn()" value="Close connection"/> <br/>
+        <br/>
+        Message:<br/>
+        <input type="text" id="myMessage" size="80" value="@msg"> <br/>
 
         <input type="button" onclick="sendMsg()" value="Send message"/>
-        <input type="button" onclick="closeConn()" value="Close connection"/><br>
-
-        output: <br>
+        <br/>
+        Output : <br/>
         <textarea id="output" rows="20" cols="75" > </textarea>
     </body>
 </html>
