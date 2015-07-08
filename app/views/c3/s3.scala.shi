@@ -1,9 +1,8 @@
-@import controllers.c3.ShiFormat
-
-|||@ShiFormat.escape("---- escaped ----")|||
-
-1 - addSbtPlugin in /project/plugins.sbt
-2 - enablePlugins in  /build.sbt
-3 - add TwirlKeys.templateFormats in /build.sbt
-4 - add code as following
-
+@(text:String)
+===
+@text
+===
+@ShiFormat.escape(text)
+===
+@ShiFormat.raw(text)
+===
