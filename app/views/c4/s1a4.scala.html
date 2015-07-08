@@ -1,0 +1,30 @@
+@(userFormNested: Form[controllers.c4.UserAddressData])(implicit messages: Messages)
+
+<h1>4.1.Handling form submission</h1>
+
+<style>
+    .error {
+        color: red;
+    }
+    .info {
+        color: blue;
+    }
+</style>
+
+@if(userFormNested.hasGlobalErrors) {
+    <h2>Errors:</h2>
+    <ul>
+    @for(error <- userFormNested.globalErrors){
+        <li class="error">@error.key : @error.message @error.args.mkString(",")</li>
+    }
+    </ul>
+}
+
+@import controllers.c4.routes
+@import helper._
+@form(action = routes.S1ScalaForms.a4, 'target -> "_blank") {
+    @helper.inputText(userFormNested("name"))
+    @helper.inputText(userFormNested("address.street"))
+    @helper.inputText(userFormNested("address.city"))
+    <input type="submit" id="submit" value="@routes.S1ScalaForms.a4">
+}

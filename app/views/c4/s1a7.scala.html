@@ -1,0 +1,42 @@
+@(contactForm: Form[controllers.c4.Contact])(implicit messages: Messages)
+
+<h1>nested repeated fields</h1>
+
+<a href="https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/forms/code/scalaguide/forms/scalaforms/views/contact/form.scala.html"
+target="_blank">contact/form.scala.html</a>
+
+<style>
+    .error {
+        color: red;
+    }
+    .info {
+        color: blue;
+    }
+</style>
+
+@if(contactForm.hasGlobalErrors) {
+    <h2>Errors:</h2>
+    <ul>
+    @for(error <- contactForm.globalErrors){
+        <li class="error">@error.key : @error.message @error.args.mkString(",")</li>
+    }
+    </ul>
+}
+
+@import controllers.c4.routes
+@import helper._
+@form(action = routes.S1ScalaForms.a7s, 'target -> "_blank") {
+    
+    @inputText(contactForm("firstname"))
+    @inputText(contactForm("lastname"))
+    @inputText(contactForm("company"))
+
+    @repeat(contactForm("informations")) { info =>
+        @inputText(info("label"))
+        @inputText(info("email"))
+        @repeat(info("phones")) { phone =>
+            @inputText(phone)
+        }
+    }
+    <input type="submit" id="submit" value="@routes.S1ScalaForms.a7s">
+}

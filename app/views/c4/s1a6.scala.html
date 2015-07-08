@@ -1,0 +1,29 @@
+@(userFormStatic: Form[controllers.c4.UserOptionalData])(implicit messages: Messages)
+
+<h1>4.1.Handling form submission</h1>
+
+<style>
+    .error {
+        color: red;
+    }
+    .info {
+        color: blue;
+    }
+</style>
+
+@if(userFormStatic.hasGlobalErrors) {
+    <h2>Errors:</h2>
+    <ul>
+    @for(error <- userFormStatic.globalErrors){
+        <li class="error">@error.key : @error.message @error.args.mkString(",")</li>
+    }
+    </ul>
+}
+
+@import controllers.c4.routes
+@import helper._
+@form(action = routes.S1ScalaForms.a6, 'target -> "_blank") {
+    @helper.inputText(userFormStatic("name"))
+    @helper.inputText(userFormStatic("email"))
+    <input type="submit" id="submit" value="@routes.S1ScalaForms.a6">
+}

@@ -77,6 +77,12 @@ class Application extends Controller {
             "app/controllers/c3/S3ScalaCustomTemplateFormat.scala",
             "https://github.com/playframework/twirl/blob/1.0.x/compiler/src/test/scala/play/twirl/compiler/test/TemplateUtilsSpec.scala",
             "ScalaCustomTemplateFormat")
+        )),
+        Chapter("4.Form submission and validation", Seq(
+          Link("4.1.WebSockets", "/c4/4-1",
+            "app/controllers/c4/S1ScalaForms.scala",
+            "main/forms/code/ScalaForms.scala",
+            "ScalaForms")
         ))
       )
     )
