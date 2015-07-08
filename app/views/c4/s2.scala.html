@@ -1,0 +1,42 @@
+@()(implicit token: play.filters.csrf.CSRF.Token)
+
+<h1>4.2.Protecting against CSRF</h1>
+
+<p>press F12 to debug</p>
+
+@import helper._
+@import controllers.c4.routes
+
+@form(routes.S2ScalaCsrf.a1(),'target ->"_blank") {
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a1">
+}
+
+@form(routes.S2ScalaCsrf.a2(),'target ->"_blank") {
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a2">
+}
+
+@form(routes.S2ScalaCsrf.a3(),'target ->"_blank") {
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a3">
+}
+
+@form(routes.S2ScalaCsrf.a4(),'target ->"_blank") {
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a4">
+}
+
+@form(CSRF(routes.S2ScalaCsrf.a1()),'target ->"_blank") {
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a1 CSRFCheck">
+}
+
+@form(routes.S2ScalaCsrf.a2(),'target ->"_blank") {
+    @CSRF.formField
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a2 CSRFAddToken">
+}
+
+@form(CSRF(routes.S2ScalaCsrf.a3()),'target ->"_blank") {
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a3 CSRFCheck">
+}
+
+@form(routes.S2ScalaCsrf.a4(),'target ->"_blank") {
+    @CSRF.formField
+    <input type="submit" id="submit" value="@routes.S2ScalaCsrf.a4 CSRFAddToken">
+}

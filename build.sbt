@@ -31,3 +31,6 @@ TwirlKeys.templateFormats += ("shi" -> "controllers.c3.A9.ShiFormat")
 
 TwirlKeys.templateImports += "controllers.c3.A9._"
 
+// @see 4.2.Protecting against CSRF @+1
+libraryDependencies += filters
+

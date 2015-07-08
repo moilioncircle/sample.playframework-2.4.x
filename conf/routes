@@ -153,6 +153,12 @@ GET         /c4/4-1-a7                    controllers.c4.S1ScalaForms.a7
 POST        /c4/4-1-a7s                   controllers.c4.S1ScalaForms.a7s
 GET         /c4/4-1-af                    controllers.c4.S1ScalaForms.af
 
+# 4.2.Protecting against CSRF
+GET         /c4/4-2                       controllers.c4.S2ScalaCsrf.a0
+POST        /c4/4-2-a1                    controllers.c4.S2ScalaCsrf.a1
+POST        /c4/4-2-a2                    controllers.c4.S2ScalaCsrf.a2
+POST        /c4/4-2-a3                    controllers.c4.S2ScalaCsrf.a3
+POST        /c4/4-2-a4                    controllers.c4.S2ScalaCsrf.a4
 
 ############################################
 # Map static resources from the /public folder to the /assets URL path

@@ -79,10 +79,14 @@ class Application extends Controller {
             "ScalaCustomTemplateFormat")
         )),
         Chapter("4.Form submission and validation", Seq(
-          Link("4.1.WebSockets", "/c4/4-1",
+          Link("4.1.Handling form submission", "/c4/4-1",
             "app/controllers/c4/S1ScalaForms.scala",
             "main/forms/code/ScalaForms.scala",
-            "ScalaForms")
+            "ScalaForms"),
+          Link("4.2.Protecting against CSRF", "/c4/4-2",
+            "app/controllers/c4/S2ScalaCsrf.scala",
+            "main/forms/code/ScalaCsrf.scala",
+            "ScalaCsrf")
         ))
       )
     )
