@@ -135,6 +135,25 @@ GET         /c3/3-2-a4                    controllers.c3.S2ScalaTemplateUseCases
 # 3.3.Custom format
 GET         /c3/3-3                       controllers.c3.S3ScalaCustomTemplateFormat.a0
 
+
+# 4.1.Handling form submission
+GET         /c4/4-1                       controllers.c4.S1ScalaForms.a0
+# form's method depends the sequence of POST and GET routing
+POST        /c4/4-1-a1                    controllers.c4.S1ScalaForms.a1(i:Int?=1)
+GET         /c4/4-1-a1                    controllers.c4.S1ScalaForms.a1(i:Int?=1)
+POST        /c4/4-1-a2                    controllers.c4.S1ScalaForms.a2
+POST        /c4/4-1-a3                    controllers.c4.S1ScalaForms.a3
+POST        /c4/4-1-a4                    controllers.c4.S1ScalaForms.a4
+GET         /c4/4-1-a4                    controllers.c4.S1ScalaForms.a4
+POST        /c4/4-1-a5                    controllers.c4.S1ScalaForms.a5
+GET         /c4/4-1-a5                    controllers.c4.S1ScalaForms.a5
+POST        /c4/4-1-a6                    controllers.c4.S1ScalaForms.a6
+GET         /c4/4-1-a6                    controllers.c4.S1ScalaForms.a6
+GET         /c4/4-1-a7                    controllers.c4.S1ScalaForms.a7
+POST        /c4/4-1-a7s                   controllers.c4.S1ScalaForms.a7s
+GET         /c4/4-1-af                    controllers.c4.S1ScalaForms.af
+
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
