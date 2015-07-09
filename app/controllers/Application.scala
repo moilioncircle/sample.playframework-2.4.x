@@ -95,6 +95,20 @@ class Application extends Controller {
             "app/controllers/c4/S4ScalaCustomFieldConstructors.scala",
             "main/forms/code/ScalaFieldConstructor.scala",
             "ScalaCustomFieldConstructors")
+        )),
+        Chapter("5.Working with Json", Seq(
+          Link("5.1.JSON basics", "/c5/5-1",
+            "app/controllers/c5/S1ScalaJson.scala",
+            "main/json/code/ScalaJsonSpec.scala",
+            "ScalaJson"),
+          Link("5.2.JSON with HTTP", "/c5/5-2",
+            "app/controllers/c5/S2ScalaJsonHttp.scala",
+            "main/json/code/ScalaJsonHttpSpec.scala",
+            "ScalaJsonHttp"),
+          Link("5.3.JSON Reads/Writes/Format Combinators", "/c5/5-3",
+            "app/controllers/c5/S3ScalaJsonCombinators.scala",
+            "main/json/code/ScalaJsonCombinatorsSpec.scala",
+            "ScalaJsonCombinators")
         ))
       )
     )

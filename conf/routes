@@ -171,6 +171,17 @@ GET         /c4/4-4-a1                    controllers.c4.S4ScalaCustomFieldConst
 POST        /c4/4-4-a2                    controllers.c4.S4ScalaCustomFieldConstructors.a2
 GET         /c4/4-4-a2                    controllers.c4.S4ScalaCustomFieldConstructors.a2
 
+# 5.1.JSON basics
+GET         /c5/5-1                       controllers.c5.S1ScalaJson.a0
+
+# 5.2.JSON with HTTP
+GET         /c5/5-2                       controllers.c5.S2ScalaJsonHttp.a0
+GET         /c5/5-2-a1                    controllers.c5.S2ScalaJsonHttp.a1
+POST        /c5/5-2-a2                    controllers.c5.S2ScalaJsonHttp.a2
+
+# 5.3.JSON with HTTP
+GET         /c5/5-3                       controllers.c5.S3ScalaJsonCombinators.a0
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,39 @@
+<h1>5.1.JSON basics</h1>
+
+<a href="/c5/5-2-a1" target="_blank">/c5/5-2-a1</a>
+
+<script src="@routes.Assets.versioned("javascripts/jquery-2.1.4.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+var good =  '{"name":"Nuthanger Farm","location":{"lat" : 51.244031,"long" : -1.263224}}'
+var bad =  '{"name":"Nuthanger Farm","location":{"lat" : "xxx","long" : -1.263224}}'
+
+function submit(json){
+    $.ajax({
+        url: "/c5/5-2-a2",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        data: json ,
+        error: function(jqXHR, textStatus, errorThrown) {
+            if (textStatus == "error") {
+                alert(textStatus + " : " +errorThrown);
+            } else {
+                alert(textStatus);
+            }
+        },
+        success: function(data, textStatus, jqXHR) {
+            var msg = ""
+            msg += "\nres-type: " + toString.apply(data);
+            msg += "\nStatus: " + textStatus;
+            msg += "\nHeader:\n" + jqXHR.getAllResponseHeaders();
+            msg += "\nData:\n" + JSON.stringify(data);
+            alert(msg)
+        }
+    });
+}
+
+
+</script>
+
+<p><input type="button" value="/c5/5-2-a2 good json" onclick="submit(good)"></p>
+<p><input type="button" value="/c5/5-2-a2 bad json" onclick="submit(bad)"></p>
