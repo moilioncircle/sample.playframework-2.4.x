@@ -160,6 +160,17 @@ POST        /c4/4-2-a2                    controllers.c4.S2ScalaCsrf.a2
 POST        /c4/4-2-a3                    controllers.c4.S2ScalaCsrf.a3
 POST        /c4/4-2-a4                    controllers.c4.S2ScalaCsrf.a4
 
+# 4.3.Custom Validations
+POST        /c4/4-3                       controllers.c4.S3ScalaCustomValidations.a0
+GET         /c4/4-3                       controllers.c4.S3ScalaCustomValidations.a0
+
+# 4.4.Custom Field Constructors
+GET         /c4/4-4                       controllers.c4.S4ScalaCustomFieldConstructors.a0
+POST        /c4/4-4-a1                    controllers.c4.S4ScalaCustomFieldConstructors.a1
+GET         /c4/4-4-a1                    controllers.c4.S4ScalaCustomFieldConstructors.a1
+POST        /c4/4-4-a2                    controllers.c4.S4ScalaCustomFieldConstructors.a2
+GET         /c4/4-4-a2                    controllers.c4.S4ScalaCustomFieldConstructors.a2
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)

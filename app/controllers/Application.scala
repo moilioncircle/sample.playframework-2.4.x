@@ -86,7 +86,15 @@ class Application extends Controller {
           Link("4.2.Protecting against CSRF", "/c4/4-2",
             "app/controllers/c4/S2ScalaCsrf.scala",
             "main/forms/code/ScalaCsrf.scala",
-            "ScalaCsrf")
+            "ScalaCsrf"),
+          Link("4.3.Custom Validations", "/c4/4-3",
+            "app/controllers/c4/S3ScalaCustomValidations.scala",
+            "main/forms/code/CustomValidations.scala",
+            "ScalaCustomValidations"),
+          Link("4.4.Custom Field Constructors", "/c4/4-4",
+            "app/controllers/c4/S4ScalaCustomFieldConstructors.scala",
+            "main/forms/code/ScalaFieldConstructor.scala",
+            "ScalaCustomFieldConstructors")
         ))
       )
     )

@@ -1,0 +1,19 @@
+@(passwordForm: Form[String])(implicit messages: Messages)
+
+<style>
+.error {
+color : red ;
+}
+.info {
+color : blue ;
+}
+</style>
+<h1>4.3.4.3.Custom Validations</h1>
+
+@import helper._
+@import controllers.c4.routes
+
+@form(routes.S3ScalaCustomValidations.a0, 'target -> "_blank") {
+    @inputPassword(passwordForm("password"))
+    <input type="submit" id="submit" value="@routes.S3ScalaCustomValidations.a0">
+}
