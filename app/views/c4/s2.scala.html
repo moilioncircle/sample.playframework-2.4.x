@@ -2,7 +2,15 @@
 
 <h1>4.2.Protecting against CSRF</h1>
 
-<p>press F12 to debug</p>
+<p>F12 to debug: source and cookie</p>
+
+<pre>
+related configuration:
+ * /build.sbt
+    libraryDependencies += filters
+ * /conf/application.conf
+    play.http.filters = "controllers.c4.Filters"
+</pre>
 
 @import helper._
 @import controllers.c4.routes

@@ -1,4 +1,18 @@
 @(text:String)
+<h1>3.3.Custom format</h1>
+
+<pre>
+related configuration:
+    * /build.sbt
+       //lazy val root = (project in file(".")).enablePlugins(PlayScala)
+       lazy val root = (project in file(".")).enablePlugins(PlayScala,SbtTwirl)
+       import play.twirl.sbt.Import._
+       TwirlKeys.templateFormats += ("shi" -> "controllers.c3.A9.ShiFormat")
+       TwirlKeys.templateImports += "controllers.c3.A9._"
+    * /project/plugins.sbt
+       addSbtPlugin("com.typesafe.sbt" % "sbt-twirl" % "1.0.2")
+</pre>
+
 ===
 @text
 ===
