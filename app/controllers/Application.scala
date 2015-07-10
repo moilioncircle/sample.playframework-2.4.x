@@ -108,7 +108,11 @@ class Application extends Controller {
           Link("5.3.JSON Reads/Writes/Format Combinators", "/c5/5-3",
             "app/controllers/c5/S3ScalaJsonCombinators.scala",
             "main/json/code/ScalaJsonCombinatorsSpec.scala",
-            "ScalaJsonCombinators")
+            "ScalaJsonCombinators"),
+          Link("5.4.JSON Transformers", "/c5/5-4",
+            "app/controllers/c5/S4ScalaJsonTransformers.scala",
+            "",
+            "ScalaJsonTransformers")
         ))
       )
     )

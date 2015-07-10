@@ -182,6 +182,9 @@ POST        /c5/5-2-a2                    controllers.c5.S2ScalaJsonHttp.a2
 # 5.3.JSON with HTTP
 GET         /c5/5-3                       controllers.c5.S3ScalaJsonCombinators.a0
 
+# 5.4.JSON Transformers
+GET         /c5/5-4                       controllers.c5.S4ScalaJsonTransformers.a0
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
