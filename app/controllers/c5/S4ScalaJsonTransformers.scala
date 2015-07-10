@@ -4,9 +4,8 @@ import play.api.libs.json._
 import play.api.mvc._
 
 /**
- * Created by trydofor on 7/9/15.
- * @see https://playframework.com/documentation/2.4.x/ScalaJson
- * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/json/code/ScalaJsonCombinatorsSpec.scala
+ * Created by trydofor on 7/10/15.
+ * @see https://playframework.com/documentation/2.4.x/ScalaJsonTransformers
  */
 
 

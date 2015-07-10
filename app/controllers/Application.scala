@@ -112,7 +112,11 @@ class Application extends Controller {
           Link("5.4.JSON Transformers", "/c5/5-4",
             "app/controllers/c5/S4ScalaJsonTransformers.scala",
             "",
-            "ScalaJsonTransformers")
+            "ScalaJsonTransformers"),
+          Link("5.5.JSON Macro Inception", "/c5/5-5",
+            "app/controllers/c5/S5ScalaJsonInception.scala",
+            "",
+            "ScalaJsonInception")
         ))
       )
     )

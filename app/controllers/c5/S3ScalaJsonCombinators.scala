@@ -4,7 +4,7 @@ import play.api.mvc._
 
 /**
  * Created by trydofor on 7/9/15.
- * @see https://playframework.com/documentation/2.4.x/ScalaJson
+ * @see https://playframework.com/documentation/2.4.x/ScalaJsonCombinators
  * @see https://github.com/playframework/playframework/blob/2.4.x/documentation/manual/working/scalaGuide/main/json/code/ScalaJsonCombinatorsSpec.scala
  */
 
@@ -95,7 +95,7 @@ class S3ScalaJsonCombinators extends Controller {
 
   nameResult match {
     case s: JsSuccess[String] => println("Name: " + s.get)
-    case e: JsError => println("Errors: " + JsError.toFlatJson(e).toString())
+    case e: JsError => println("Errors: " + JsError.toJson(e).toString())
   }
 
   val improvedNameReads =
