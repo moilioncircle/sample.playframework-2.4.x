@@ -188,6 +188,10 @@ GET         /c5/5-4                       controllers.c5.S4ScalaJsonTransformers
 # 5.5.JSON Macro Inception
 GET         /c5/5-5                       controllers.c5.S5ScalaJsonInception.a0
 
+# 10.1.The Play WS API
+GET         /c10/10-1                     controllers.c10.S1ScalaWS.a0
+POST        /c10/10-1-a1                  controllers.c10.S1ScalaWS.a1
+GET         /c10/10-1-a1                  controllers.c10.S1ScalaWS.a1
 
 ############################################
 # Map static resources from the /public folder to the /assets URL path

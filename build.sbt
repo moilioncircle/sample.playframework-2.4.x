@@ -11,7 +11,7 @@ scalaVersion := "2.11.6"
 libraryDependencies ++= Seq(
   jdbc,
   cache,
-  ws,
+  ws, //10.1.The Play WS API
   specs2 % Test
 )
 

@@ -117,6 +117,12 @@ class Application extends Controller {
             "app/controllers/c5/S5ScalaJsonInception.scala",
             "",
             "ScalaJsonInception")
+        )),
+        Chapter("10.Calling WebServices", Seq(
+          Link("10.1.The Play WS API", "/c10/10-1",
+            "app/controllers/c10/S1ScalaWS.scala",
+            "main/ws/code/ScalaWSSpec.scala",
+            "ScalaWS")
         ))
       )
     )
