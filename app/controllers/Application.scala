@@ -122,7 +122,15 @@ class Application extends Controller {
           Link("10.1.The Play WS API", "/c10/10-1",
             "app/controllers/c10/S1ScalaWS.scala",
             "main/ws/code/ScalaWSSpec.scala",
-            "ScalaWS")
+            "ScalaWS"),
+          Link("10.2.Connecting to OpenID services", "/c10/10-2",
+            "app/controllers/c10/S2ScalaOpenID.scala",
+            "main/ws/code/ScalaOpenIdSpec.scala",
+            "ScalaOpenID"),
+          Link("10.3.Accessing resources protected by OAuth", "/c10/10-3",
+            "app/controllers/c10/S3ScalaOAuth.scala",
+            "",
+            "ScalaOAuth")
         ))
       )
     )

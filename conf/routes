@@ -193,6 +193,14 @@ GET         /c10/10-1                     controllers.c10.S1ScalaWS.a0
 POST        /c10/10-1-a1                  controllers.c10.S1ScalaWS.a1
 GET         /c10/10-1-a1                  controllers.c10.S1ScalaWS.a1
 
+# 10.2.Accessing resources protected by OAuth
+GET         /c10/10-2                     controllers.c10.S2ScalaOpenID.a0
+GET         /c10/10-2-login               controllers.c10.S2ScalaOpenID.login
+GET         /c10/10-2-openid              controllers.c10.S2ScalaOpenID.openIdCallback
+
+# 10.3.Accessing resources protected by OAuth
+GET         /c10/10-3                     controllers.c10.S3ScalaOAuth.a0
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
