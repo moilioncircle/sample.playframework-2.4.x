@@ -131,6 +131,12 @@ class Application extends Controller {
             "app/controllers/c10/S3ScalaOAuth.scala",
             "",
             "ScalaOAuth")
+        )),
+        Chapter("11.Integrating with Akka", Seq(
+          Link("11.Integrating with Akka", "/c11/11-1",
+            "app/controllers/c11/S1ScalaAkka.scala",
+            "main/akka/code/ScalaAkka.scala",
+            "ScalaAkka")
         ))
       )
     )

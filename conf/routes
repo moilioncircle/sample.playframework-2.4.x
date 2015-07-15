@@ -201,6 +201,9 @@ GET         /c10/10-2-openid              controllers.c10.S2ScalaOpenID.openIdCa
 # 10.3.Accessing resources protected by OAuth
 GET         /c10/10-3                     controllers.c10.S3ScalaOAuth.a0
 
+# 11.Integrating with Akka
+GET         /c11/11-1                     controllers.c11.S1ScalaAkka.a0
+
 ############################################
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
